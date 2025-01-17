@@ -1,4 +1,4 @@
-  body {
+ body {
 	position: relative;
 	font-family: 'Noto Sans', sans-serif;
 	font-size: 16px;
@@ -97,10 +97,10 @@ button:hover{
 	margin-top: 20px;
 }
 
-.cart:hover{
+.cart{
 	right: 0;
 	transition: right .2s ease-in-out;
-	width: 400px;
+	width:0px;
 	height: 100vh;
 }
 .cart-container {
@@ -151,4 +151,31 @@ button:hover{
 	  flex: 1 1 100%;
 	}
   }
-  
+  #cart {
+    border: 1px solid #ccc;
+    padding: 20px;
+    margin: 20px;
+	width: 400px;
+	left:93%;
+	position: absolute;
+	background-color: aliceblue;
+	transition: 0.7s;
+}
+
+#cart:hover{
+	left: 75%;
+	
+}
+.cart-item {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+	
+}
+
+#cart-total {
+    font-weight: bold;
+    margin-top: 10px;
+	float: right;
+}
+
