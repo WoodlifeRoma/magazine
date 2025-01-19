@@ -347,7 +347,30 @@ document.querySelectorAll('.add-to-card').forEach(button => {
     });
 });
 
-                   
+                   function saveCartToLocalStorage() {
+    localStorage.setItem('cart', JSON.stringify(cart));
+}
+
+// Викликайте `saveCartToLocalStorage()` після будь-якої зміни кошика
+function addToCart(productName, price) {
+    const existingProduct = cart.find(item => item.name === productName);
+
+    if (existingProduct) {
+        existingProduct.quantity += 1;
+    } else {
+        cart.push({ name: productName, price: price, quantity: 1 });
+    }
+
+    updateCartUI();
+    saveCartToLocalStorage(); // Зберігаємо зміни
+}
+
+function removeFromCart(productName) {
+    cart = cart.filter(item => item.name !== productName);
+    updateCartUI();
+    saveCartToLocalStorage(); // Зберігаємо зміни
+}
+
                 </script>
 
 
