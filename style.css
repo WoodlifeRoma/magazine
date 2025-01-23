@@ -33,11 +33,9 @@ h1{
 	display: flex;
     margin-left: 20px;
 	border-radius: 8px;
+    transition: 0.3s;
 }
-.image:hover{
-width: 430px;
-	height:430px 
-}
+
 footer{
 	color: rgb(255, 255, 255);
 	background-color: #000;
@@ -64,7 +62,8 @@ footer p {
 	padding: 10px;
 	margin-top: 50px;
 	border-radius: 8px;
-	
+  
+	transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 .cards{
 	flex-wrap: wrap;
@@ -140,7 +139,7 @@ button:hover{
   }
   
   .item {
-	flex: 1 1 calc(33.333% - 20px); /* Ширина з урахуванням відступів */
+	flex: 1 1 calc(33.333% - 20px);
 	margin: 10px;
   }
   
@@ -183,3 +182,10 @@ button:hover{
 	float: right;
 }
 
+
+
+.conteiner.active {
+    transform: scale(1.2); /* Збільшує картку */
+  
+  
+}
