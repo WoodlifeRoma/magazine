@@ -370,14 +370,14 @@ function removeFromCart(productName) {
     updateCartUI();
     saveCartToLocalStorage(); // Зберігаємо зміни
 }
-document.querySelectorAll('.conteiner').forEach(container => {
+document.querySelectorAll('.image img').forEach(container => {
     container.addEventListener('click', () => {
         // Якщо картка вже активна, знімаємо клас 'active'
         if (container.classList.contains('active')) {
             container.classList.remove('active');
         } else {
             // Видалення класу 'active' з усіх карток
-            document.querySelectorAll('.conteiner').forEach(item => item.classList.remove('active'));
+            document.querySelectorAll('.image img').forEach(item => item.classList.remove('active'));
 
             // Додавання класу 'active' до натиснутої картки
             container.classList.add('active');
