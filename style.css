@@ -33,7 +33,7 @@ h1{
 	display: flex;
     margin-left: 20px;
 	border-radius: 8px;
-    transition: 0.3s;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 footer{
@@ -49,6 +49,7 @@ a {
 	
 }
 a:hover{
+	
 	padding: 20px;
 	border-radius: 40px;
 	transition: 0.7s;
@@ -63,7 +64,6 @@ footer p {
 	margin-top: 50px;
 	border-radius: 8px;
   
-	transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 .cards{
 	flex-wrap: wrap;
