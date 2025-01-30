@@ -9,6 +9,7 @@ body {
     height: auto;
     margin: 0;
     padding: 0;
+    background-color: #f4f4f4;
 }
 
 /* 🔹 Хедер */
@@ -25,18 +26,16 @@ header {
 
 .logo {
     height: 220px;
-    width: 230px;
+    width: 230px; 
+    float: right;
 }
 
 .logo1 {
     margin-top: 60px;
+    float: left;
 }
 
-h1 {
-    text-align: center;
-}
-
-/* 🔹 Навігація (завжди в рядок) */
+/* 🔹 Навігація */
 .nav {
     display: flex;
     flex-wrap: wrap;
@@ -59,7 +58,7 @@ h1 {
     text-decoration: none;
     padding: 10px;
     border-radius: 8px;
-    white-space: nowrap; /* Запобігає переносу тексту */
+    white-space: nowrap;
 }
 
 .nav1 a:hover {
@@ -68,10 +67,10 @@ h1 {
     transition: 0.7s;
 }
 
-/* 🔹 Контейнер товарів (адаптивний Grid) */
+/* 🔹 Контейнер товарів */
 .cards {
     display: grid;
-    grid-template-columns: repeat(3, 1fr); /* По 3 товари на великих екранах */
+    grid-template-columns: repeat(3, 1fr);
     gap: 15px;
     padding: 20px;
     justify-content: center;
@@ -153,10 +152,10 @@ button:hover {
     background-color: orange;
 }
 
-/* 🔹 Медійні запити для адаптивності */
+/* 🔹 Адаптивність */
 @media (max-width: 1024px) {
     .cards {
-        grid-template-columns: repeat(2, 1fr); /* По 2 товари на планшетах */
+        grid-template-columns: repeat(2, 1fr);
     }
 
     #cart {
@@ -168,7 +167,17 @@ button:hover {
 
 @media (max-width: 768px) {
     .cards {
-        grid-template-columns: repeat(2, 1fr); /* По 2 товари на мобільних */
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .logo {
+        height: 150px;
+        width: 180px;
+    }
+
+    .logo1 {
+        width: 140px;
+        height: auto;
     }
 }
 
@@ -178,12 +187,17 @@ button:hover {
     }
 
     .logo {
-        height: 150px;
-        width: 180px;
+        height: 120px;
+        width: 140px;
+    }
+
+    .logo1 {
+        width: 420px;
+        
     }
 
     .cards {
-        grid-template-columns: repeat(2, 1fr); /* Залишається по 2 товари */
+        grid-template-columns: repeat(2, 1fr);
     }
 
     .conteiner {
@@ -192,5 +206,73 @@ button:hover {
 
     button {
         padding: 10px;
+    }
+}
+/* Модальне вікно */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    justify-content: center;
+    align-items: center;
+}
+
+/* Контент модального вікна */
+.modal-content {
+    max-width: 90%;
+    max-height: 90%;
+    border-radius: 8px;
+}
+
+/* Кнопка закриття */
+.close {
+    position: absolute;
+    top: 20px;
+    right: 40px;
+    color: white;
+    font-size: 40px;
+    font-weight: bold;
+    cursor: pointer;
+}
+/* Основний стиль логотипів */
+.logo, .logo1 {
+    max-width: 100%;  /* Щоб не виходило за межі контейнера */
+    height: auto;  /* Автоматичне співвідношення сторін */
+    display: block;  /* Виправляє можливі проблеми з вирівнюванням */
+}
+
+/* Адаптація логотипів під мобільні пристрої */
+@media (max-width: 1024px) {
+    .logo {
+        width: 180px;  
+        height: auto;  
+    }
+    .logo1 {
+        width: 300px;  
+        height: 50px;
+    }
+}
+
+@media (max-width: 768px) {
+    .logo {
+        width: 150px;
+    }
+    .logo1 {
+        width: 130px;
+    }
+}
+
+@media (max-width: 480px) {
+    .logo {
+        width: 120px;
+    }
+    .logo1 {
+        width: 300px;
+        height: auto;
     }
 }
